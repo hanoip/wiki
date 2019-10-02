@@ -19,4 +19,4 @@ User.init({
   }
 }, { sequelize: db, modelName: 'user' });
 
-module.exports = { User };
+module.exports = User;

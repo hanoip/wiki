@@ -4,7 +4,7 @@ var db = new Sequelize('postgres://localhost:5432/wiki', {
 });
 
 
-// var a = require('./User');
-// var b = require('./Page');
+// var User = require('./User');
+// var Page = require('./Page');
 
 module.exports = { db }

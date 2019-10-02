@@ -6,7 +6,8 @@ const models = require('./models');
 const routes = require('./routes');  //toma el index por convencion
 var user = require('./models/User');
 var page = require('./models/Page');
-
+app.use(bodyParser.urlencoded({ extended: true })); // para HTML form submits
+app.use(bodyParser.json());
 
 var env = nunjucks.configure('views', { noCache: true });
 // hace res.render funcionar con archivos html
@@ -15,7 +16,7 @@ app.set('view engine', 'html');
 app.engine('html', nunjucks.render);
 
 
-models.db.sync({ force: true })
+models.db.sync({ force: false })
   .then(function () {
     // asegurate de reemplazar el nombre de abajo con tu app de express
     app.listen(3001, function () {
